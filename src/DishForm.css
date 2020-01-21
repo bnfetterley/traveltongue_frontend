@@ -1,0 +1,84 @@
+.modal {
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Overlay effect: translucent background: black w/ partial opacity */
+    z-index: 1; /* Overlay effect: positioned over other containers */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    position: fixed; /* Fix position on the top-left corner*/
+    top: 0;
+    left: 0;
+    overflow: auto; /* Enable scroll if needed */
+    padding-top: 80px; /* Location of the content container */
+  
+  }
+
+
+  .nameInput {
+      height: 50%
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#dishform {
+    position:absolute;
+    height: 336px;
+	width: 790px;
+	background-repeat: no-repeat;
+	background-position: 10px 10px;
+	/* [COLOR="Red"]position: relative;[/COLOR] */
+	z-index: 3
+}   
+
+.resize {
+    width: 400px;
+    height: auto;
+}
+
+.resize {
+    width: 300px;
+    height: auto;
+}
+
+.modal{
+    z-index: 3
+}
+
+#dishbutton{
+    background:url('./dish.png') no-repeat left;
+    padding-left:10px;
+    background-size: 100%;
+    top: 30%;
+    left: 10%;
+    font-size: 25px;
+    font-weight: bold;
+    display: inline-block;
+    margin: 0 auto;
+    color: #dcfbb4;
+    background-color: green;
+    border: 0.4em solid #d4f7da;
+    border-radius: 50%;
+    transition: all 0.3s;
+    box-sizing: border-box;
+    width: 2m;
+    height: 2em;
+    cursor: pointer;
+    box-shadow: 0 0 0 rgba(0,0,0,0.1), inset 0 0 0 rgba(0,0,0,0.1);
+   
+ } 
