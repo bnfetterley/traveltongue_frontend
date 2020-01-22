@@ -33,80 +33,39 @@ export default class Location extends Component {
         
         // console.log(this.props, this.state)
         
-       
-        function SampleNextArrow(props) {
-            
-            const { className, style, click } = props;
-     
-            return (
-              <div
-                className={className}
-                style={{ ...style, display: "block" }}
-                onClick={props.click}
-              />
-            );
-          }
-          
-          function SamplePrevArrow(props) {
-           
-            const { className, style, click } = props;
-            return (
-              <div
-                className={className}
-                style={{ ...style, display: "block"}}
-                onClick={props.click}
-              />
-            );
-          }
-            const settings = {
-                className: "center",
-                centerMode: true,
-                infinite: true,
-                centerPadding: "100px",
-                slidesToShow: 1,
-                speed: 200,
-                variableWidth: false,
-                variableHeight: false,
-                dots: true,
-                centerPadding: '100px',
-                dotsClass: "slick-dots slick-thumb",
-                centerMode: true,
-                nextArrow: <SampleNextArrow click = {(e) => this.handleOnClick(e)}/>,
-                prevArrow: <SamplePrevArrow onClick = {(e) => this.handleOnClick()}/>
-              };
+        
 
         return (
-            <div className = "parent">
-                
-                <h2 className = "header" > Dishes from {this.props.selectedPlace}</h2> 
-   { dishArray && 
+            <div>
+            <h1 className = "header"> Dishes from {location && location.country}</h1>
 
+            <div class="wrap">
 
-        <Slider id = "slider" {...settings}>
-           {dishArray.map(dish =>  <div className = "dish" key = {dish.id}>
-        <img className="image fit-image" src={dish.image} />
+            <br></br>
 
-        <h1 className = "dishName"> {dish.name} </h1>
-        <p className = "dishName" > {dish.description}</p> 
-        <p> <button className = "commentButton" onClick = {(e) => this.handleOnClick(e, dish)}> <h1>What do other's think of this dish?</h1></button> </p>
-         </div>)}
+            {dishArray && dishArray.map(dish =>  
+            
+            <div class="tile"> 
+              <img src={dish.image}/>
+              <div class="text">
+              {/* <h1>{dish.name}</h1> */}
+              <h2 class="animate-text">{dish.name}</h2>
+              <p class="animate-text">{dish.description}</p>
+            <div class="dots">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              </div>
+             </div>
+             
+             )}
 
-         <SampleNextArrow click = {(e) => this.handleOnClick(e)}/>
-         
-        
-     
-     </Slider>}
+             </div>
 
-
-     <br></br>
-     <br></br>
-
-     { this.state.commentShow &&
-         <CommentDiv currentUser={this.props.currentUser} />
-     }
-                
-
-            </div>
+</div>
+  
+  
         )
     }
 }

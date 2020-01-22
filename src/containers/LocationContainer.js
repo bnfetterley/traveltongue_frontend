@@ -6,7 +6,12 @@ export default class LocationContainer extends Component {
         // console.log(this.props)
         return (
             <div id ="location">
-           <Location currentUser = {this.props.currentUser} dishes = {this.props.dishes} locations = {this.props.locations} selectedPlace = {this.props.selectedPlace} />>
+           <Location 
+           currentUser = {this.props.currentUser} 
+           dishes = {this.props.dishes} 
+           locations = {this.props.locations} 
+           selectedPlace = {this.props.selectedPlace} 
+           />>
             </div>
         )
     }
