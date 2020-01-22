@@ -11,6 +11,8 @@ export default class LocationContainer extends Component {
            dishes = {this.props.dishes} 
            locations = {this.props.locations} 
            selectedPlace = {this.props.selectedPlace} 
+           handleDishClick = {this.props.handleDishClick}
+           currentDish = {this.props.currentDish}
            />>
             </div>
         )

@@ -24,69 +24,37 @@ class CommentDiv extends Component {
     </Header>
 
     <Comment>
-      <Comment.Avatar src='https://react.semantic-ui.com/images/avatar/small/matt.jpg' />
+      <Comment.Avatar src='https://react.semantic-ui.com/images/avatar/small/jenny.jpg' />
       <Comment.Content>
-        <Comment.Author as='a'>{this.props.currentUser && this.props.currentUser.username}</Comment.Author>
+        <Comment.Author as='a'>Bri</Comment.Author>
         <Comment.Metadata>
           <div>Today at 5:42PM</div>
         </Comment.Metadata>
-        <Comment.Text>How artistic!</Comment.Text>
+        <Comment.Text>OMG! YUM!!!!!!!!!!!!!!!!!!!!!!! My fav :) :) </Comment.Text>
         <Comment.Actions>
           <Comment.Action>Reply</Comment.Action>
         </Comment.Actions>
       </Comment.Content>
     </Comment>
 
-    <Comment>
-      <Comment.Avatar src='https://react.semantic-ui.com/images/avatar/small/elliot.jpg' />
+    {this.props.comments.map(comment => 
+      <Comment>
+      <Comment.Avatar src='https://react.semantic-ui.com/images/avatar/small/jenny.jpg' />
       <Comment.Content>
-        <Comment.Author as='a'>Elliot Fu</Comment.Author>
+        <Comment.Author as='a'>{comment.user_id}</Comment.Author>
         <Comment.Metadata>
-          <div>Yesterday at 12:30AM</div>
+          <div>{comment.created_at}</div>
         </Comment.Metadata>
-        <Comment.Text>
-          <p>This has been very useful for my research. Thanks as well!</p>
-        </Comment.Text>
+        <Comment.Text>{comment.content} </Comment.Text>
         <Comment.Actions>
           <Comment.Action>Reply</Comment.Action>
         </Comment.Actions>
       </Comment.Content>
-      <Comment.Group>
-        <br></br>
-        <br></br>
-        <Comment>
-          <Comment.Avatar src='https://react.semantic-ui.com/images/avatar/small/jenny.jpg' />
-          <Comment.Content>
-            <Comment.Author as='a'>Jenny Hess</Comment.Author>
-            <Comment.Metadata>
-              <div>Just now</div>
-            </Comment.Metadata>
-            <Comment.Text>Elliot you are always so right :)</Comment.Text>
-            <Comment.Actions>
-              <Comment.Action>Reply</Comment.Action>
-            </Comment.Actions>
-          </Comment.Content>
-        </Comment>
-      </Comment.Group>
     </Comment>
+      )}
 
-    <Comment>
-      <Comment.Avatar src='https://react.semantic-ui.com/images/avatar/small/joe.jpg' />
-      <Comment.Content>
-        <Comment.Author as='a'>Joe Henderson</Comment.Author>
-        <Comment.Metadata>
-          <div>5 days ago</div>
-        </Comment.Metadata>
-        <Comment.Text>Dude, this is awesome. Thanks so much</Comment.Text>
-        <Comment.Actions>
-          <Comment.Action>Reply</Comment.Action>
-        </Comment.Actions>
-      </Comment.Content>
-    </Comment>
-<br></br>
-<br></br>
-    <Form reply>
-      <Form.TextArea />
+    <Form onSubmit = {(e) => this.props.handleCommentSubmit(e)}reply>
+      <Form.TextArea value = {this.props.commentContent} onChange = {(e) => this.props.handleOnChange(e)} name = "commentContent"/>
       <Button content='Add Reply' className = "reply" labelPosition='left' icon='edit' primary />
     </Form>
   </Comment.Group>

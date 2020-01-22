@@ -1,16 +1,18 @@
-import React, { Component } from 'react'
+import React, { Component, useState, useEffect  } from 'react'
 import LocationContainer from './containers/LocationContainer'
 import MapContainer from './components/Map'
 import logo from './logo.svg';
 import './App.css';
-import { BrowserRouter, Route, Switch, Link, NavLink, Redirect } from 'react-router-dom'
+import { BrowserRouter, Route, Switch, Link, NavLink, Redirect, withRouter } from 'react-router-dom'
 import './Map.css';
 import NavBar from './NavBar'
 import DishForm from './components/DishForm'
 import SignUpModal from './components/SignUpModal'
+import 'semantic-ui-css/semantic.min.css'
+import Dish from './components/Dish'
 
 
-export default class App extends Component {
+class App extends Component {
 
 
 
@@ -18,8 +20,9 @@ export default class App extends Component {
     locations: [],
     dishes: [],
     users: [],
+    comments: [],
     currentUserID: 1,
-    selectedPlace: localStorage.getItem('selectedPlace'),
+    selectedPlace: "",
     dishModal: false,
     modal: false,
     username: "",
@@ -28,7 +31,11 @@ export default class App extends Component {
     location_name: "",
     name: "",
     description: "",
-    image: ""
+    image: "",
+    searchValue: "",
+    searchResults: [],
+    currentDish: "",
+    commentContent:"",
   }
   
   //GET FETCHES!!!!
@@ -56,7 +63,16 @@ export default class App extends Component {
     .then(json_resp =>  
      this.setState({
     users: json_resp
-     }))}
+  }))
+
+    fetch(`http://localhost:3000/comments`)
+    .then(resp => resp.json())
+    .then(json_resp =>  
+     this.setState({
+    comments: json_resp
+     }))
+    
+    }
 
    // CALLBACKS FOR INFOWINDOW ON MAP
   onClose = props => {
@@ -75,7 +91,7 @@ export default class App extends Component {
          selectedPlace: selectedPlace.country
        })
        localStorage.setItem( 'selectedPlace', selectedPlace.country )
-       window.location.href="/location"
+       this.props.history.push("/location")
   }
 
  //CALLBACK FOR SIGN UP MODAL 
@@ -98,18 +114,6 @@ export default class App extends Component {
      this.setState({
        [event.target.name]: event.target.value
      })
-
-    //    if ([event.target.name] === "location_name")
-    //  {
-    //     this.setState({
-    //       location_id:  countryID,
-    //     })
-    // }
-    //  else {
-    //  this.setState({
-    //    [event.target.name]: event.target.value
-    //  })
-     console.log(this.state)
    }
 
    //CALLBACK TO POST A NEW DISH 
@@ -159,18 +163,70 @@ export default class App extends Component {
     
     })
    }
+   
+   //CALLBACK FOR SEARCH ONCHANGE
+   handleSearchOnChange = (event) => {
+     this.setState({
+      searchValue: (event.target.value),
+      searchResults: this.state.locations.filter(location =>
+        location.country.toLowerCase().includes(event.target.value))
+      })
+  
+    }
 
+    //CALLBACK FOR DISH ON CLICK
+    handleDishClick = (e, dish) => {
+      console.log(dish)
+      this.setState({
+        currentDish: dish
+      })
+      localStorage.setItem( 'currentDish', dish )
+      this.props.history.push("/dish")
+  }
 
-  render() {
-    console.log(this.state)
+  //CALLBACK FOR COMMENT SUBMIT
+  handleCommentSubmit = (e) => {
+    e.preventDefault()
+    console.log(this.state.commentContent, this.state.currentDish.id)
+    fetch(`http://localhost:3000/comments`, {
+      method:'POST',
+     headers: { 
+         'Content-type': 'application/json',
+         'accept': 'application/json'
+     },
+     body: JSON.stringify({
+      content: this.state.commentContent,
+      user_id: this.state.currentUserID,
+      dish_id: this.state.currentDish.id
+      })
+    })
+    .then(resp => resp.json())
+    .then(json_resp => {
+
+    this.setState({
+      comments: [...this.state.comments, json_resp]
+    })
+
+     })}
+    
+    render() {
+      console.log(this.state)
 
     const currentUser = this.state.users.find(user => user.id === this.state.currentUserID)
 
     return (
       <div>
 
-          <BrowserRouter>
-          <NavBar onClick = {this.selectModal} onClickDish = {this.selectDishModal} locations = {this.state.locations} /> 
+ 
+          <NavBar 
+          onClick = {this.selectModal} 
+          onClickDish = {this.selectDishModal} 
+          locations = {this.state.locations} 
+          handleSearchOnChange = {this.handleSearchOnChange}
+          searchValue = {this.state.searchValue}
+          searchResults = {this.state.searchResults}
+          setSelectedPlace = {this.setSelectedPlace} 
+          /> 
 
           <SignUpModal 
           handleOnSubmit = {this.handleOnSubmit} 
@@ -192,7 +248,7 @@ export default class App extends Component {
           location_name = {this.state.location_name}
           name = {this.state.name}
           description = {this.state.description}
-          image = {this.state.image}
+          image = {this.state.image} 
           />
 
           <Switch> 
@@ -213,10 +269,25 @@ export default class App extends Component {
                 currentUser = {currentUser} 
                 selectedPlace = {this.state.selectedPlace} 
                 locations = {this.state.locations} 
-                dishes = {this.state.dishes}/>}/>
+                dishes = {this.state.dishes}
+                handleDishClick = {this.handleDishClick}
+                currentDish = {this.state.currentDish}
+                />
+                }/>
+
+            <Route path = "/dish" render={(props) => 
+              <Dish
+              currentDish = {this.state.currentDish}
+              handleOnChange = {this.handleOnChange}
+              commentContent = {this.state.commentContent}
+              handleCommentSubmit = {this.handleCommentSubmit}
+              comments = {this.state.comments.filter(comment => comment.dish_id === this.state.currentDish.id)}
+              // currentUser = {this.state.users && this.state.users.find(user => user.id === this.state.currentUserID).username}
+              />
+            }/>
 
           </Switch> 
-          </BrowserRouter>
+     
         
       </div>
     )
@@ -224,4 +295,4 @@ export default class App extends Component {
 }
 
 
-
+export default withRouter(App)
