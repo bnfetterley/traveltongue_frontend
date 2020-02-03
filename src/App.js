@@ -10,11 +10,10 @@ import DishForm from './components/DishForm'
 import SignUpModal from './components/SignUpModal'
 import 'semantic-ui-css/semantic.min.css'
 import Dish from './components/Dish'
+import Login from './components/Login'
 
 
 class App extends Component {
-
-
 
     state = {
     locations: [],
@@ -22,6 +21,7 @@ class App extends Component {
     users: [],
     comments: [],
     currentUserID: 1,
+    currentUsername: "Bri",
     selectedPlace: "",
     dishModal: false,
     modal: false,
@@ -55,16 +55,16 @@ class App extends Component {
     this.setState({
       dishes: json_resp
     }))
-
-
+    
+    
     
     fetch(`http://localhost:3000/users`)
     .then(resp => resp.json())
     .then(json_resp =>  
-     this.setState({
-    users: json_resp
-  }))
-
+      this.setState({
+        users: json_resp
+      }))
+    
     fetch(`http://localhost:3000/comments`)
     .then(resp => resp.json())
     .then(json_resp =>  
@@ -158,8 +158,10 @@ class App extends Component {
      })
      .then(resp => resp.json())
      .then(json_resp => {
-       
-      console.log(this.state)
+       this.setState({
+         currentUsername: this.state.username,
+         currentUserID: json_resp.id
+       })
     
     })
    }
@@ -282,7 +284,8 @@ class App extends Component {
               commentContent = {this.state.commentContent}
               handleCommentSubmit = {this.handleCommentSubmit}
               comments = {this.state.comments.filter(comment => comment.dish_id === this.state.currentDish.id)}
-              // currentUser = {this.state.users && this.state.users.find(user => user.id === this.state.currentUserID).username}
+              currentUsername = {this.state.currentUsername}
+              users = {this.state.users}
               />
             }/>
 
@@ -296,3 +299,5 @@ class App extends Component {
 
 
 export default withRouter(App)
+
+

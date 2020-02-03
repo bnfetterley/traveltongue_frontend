@@ -41,7 +41,7 @@ const DishForm = props => {
                         <br></br>
 
                          <Label>What is the name of this dish?</Label>
-                        <Input
+                        <Textarea
                         className = "nameInput"
                         onChange = {(event) => props.handleOnChange(event)}
                         value = {props.name}

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Button from '@bit/semantic-org.semantic-ui-react.button'
+// import Button from '@bit/semantic-org.semantic-ui-react.button'
 import Comment from '@bit/semantic-org.semantic-ui-react.comment'
 import Form from '@bit/semantic-org.semantic-ui-react.form'
 import Header from '@bit/semantic-org.semantic-ui-react.header'
@@ -41,7 +41,7 @@ class CommentDiv extends Component {
       <Comment>
       <Comment.Avatar src='https://react.semantic-ui.com/images/avatar/small/jenny.jpg' />
       <Comment.Content>
-        <Comment.Author as='a'>{comment.user_id}</Comment.Author>
+        <Comment.Author as='a'>{this.props.currentUsername}</Comment.Author>
         <Comment.Metadata>
           <div>{comment.created_at}</div>
         </Comment.Metadata>
