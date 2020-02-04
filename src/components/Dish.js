@@ -7,7 +7,7 @@ export default class Dish extends Component {
 
         console.log(this.props)
         return (
-            <div>
+            <div id = "comments">
               <img id = "image" src={this.props.currentDish.image}/>
 
               <br></br>

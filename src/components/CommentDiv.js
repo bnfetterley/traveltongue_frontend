@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-// import Button from '@bit/semantic-org.semantic-ui-react.button'
+import Button from '@bit/semantic-org.semantic-ui-react.button'
 import Comment from '@bit/semantic-org.semantic-ui-react.comment'
 import Form from '@bit/semantic-org.semantic-ui-react.form'
 import Header from '@bit/semantic-org.semantic-ui-react.header'
