@@ -1,10 +1,10 @@
-### TravelingTongue
+# TravelingTongue
 <!-- A little info about your project and/ or overview that explains what the project is about. -->
 TravelingTongue is a web app that allows users to discover local dishes from around the world.
 
 ## Motivation
 <!-- A short description of the motivation behind the creation and maintenance of the project. This should explain why the project exists. -->
-I love exploring cultures through food, and that is what this application is for!  Users can share their favorite dishes from and learn about dishes of other cultures.
+I love exploring cultures through food and this app allows you to do just that!  Users can share their favorite local dishes and learn about dishes of other cultures. 
 
 <!-- Build status
 Build status of continus integration i.e. travis, appveyor etc. Ex. - -->
@@ -16,42 +16,29 @@ If you're using any code style like xo, standard etc. That will help others whil
 
 <!-- js-standard-style -->
 
-Screenshots
-Include logo/demo screenshot etc.
+<!-- Screenshots
+Include logo/demo screenshot etc. -->
 
 <!-- Tech/framework used
 Ex. - -->
 
-## Built with React 
-Google Maps API
+## Technologies
+JWT Auth
+Ruby on Rails
 
-Ruby on Rails Backend
-WorldBank API data
+## APIs
+Google Maps API: https://developers.google.com/maps/documentation
+WorldBank API:  https://api.ipgeolocationapi.com/countries
 
 ## Features
 - Interactive map for discovering dishes by country
-- Pop Up modal for seamless user input
+- Pop up modal forms for seamless user input
+- User's can comment on dishes they have tried or want to try
 
 <!-- Code Example
 Show what the library does as concisely as possible, developers should be able to figure out how your project solves their problem by looking at the code example. Make sure the API you are showing off is obvious, and that your code is short and concise. -->
 
-Installation
-Provide step by step series of examples and explanations about how to get a development env running.
+## Installation
 
-## API Reference
-Google Maps API: https://developers.google.com/maps/documentation
-WorldBank API:  https://api.ipgeolocationapi.com/countries
-<!-- 
-Tests
-Describe and show how to run the tests with code examples. -->
-
-<!-- How to use?
-If people like your project they’ll want to learn how they can use it. To do so include step by step guide to use your project.
-
-Contribute
-Let people know how they can contribute into your project. A contributing guideline will be a big plus.
-
-Credits
-Give proper credits. This could be a link to any repo which inspired you to build this project, any blogposts or links to people who contrbuted in this project.
-
-Anything else that seems useful -->
+Run the backend using
+Run the frontend by using npm start
