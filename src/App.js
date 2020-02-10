@@ -20,8 +20,8 @@ class App extends Component {
     dishes: [],
     users: [],
     comments: [],
-    currentUserID: 1,
-    currentUsername: "Bri",
+    currentUserID: 4,
+    currentUsername: "Katie",
     selectedPlace: "",
     dishModal: false,
     modal: false,
@@ -136,7 +136,12 @@ class App extends Component {
      .then(resp => resp.json())
      .then(json_resp => {
 
-       console.log(json_resp)
+       this.setState({
+         name: "",
+         description: "",
+         image: "",
+         location_id: ""
+       })
 
       })}
    
