@@ -32,7 +32,7 @@ I love exploring cultures through food and this app allows you to do just that! 
 - User's can comment on dishes they have tried or want to try
 ![image](https://github.com/bnfetterley/traveltongue_frontend/blob/master/src/Image_CommentForm.png)
 
-##Credits & Contributions
+## Credits & Contributions
 A huge thank you to everyone at Flatiron School who helped me and tried out my project :)
 
 For any issues, queries, or feedback, please email brifetterley@gmail.com
