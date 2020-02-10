@@ -58,7 +58,7 @@ class CommentDiv extends Component {
       <Button content='Add Reply' className = "reply" labelPosition='left' icon='edit' primary />
     </Form>
   </Comment.Group>
-)
+
 
 
 
