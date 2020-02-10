@@ -8,11 +8,11 @@ I love exploring cultures through food and this app allows you to do just that! 
 
 
 ## How to Install and View...
-* - Fork the above repo.
-* - Fork [this](https://github.com/bnfetterley/traveltongue_backend) repo. 
-* - Open both repos in seperate terminals
-* - For the front-end, enter in the terminal 'npm i && npm start'
-* - For the back-end, enter in the terminal 'bundle i && rails s'
+*  Fork the above repo.
+*  Fork [this](https://github.com/bnfetterley/traveltongue_backend) repo. 
+*  Open both repos in seperate terminals
+*  For the front-end, enter in the terminal 'npm i && npm start'
+*  For the back-end, enter in the terminal 'bundle i && rails s'
 
 ## Technologies
 JWT Auth
