@@ -17,12 +17,14 @@ I love exploring cultures through food and this app allows you to do just that! 
 *  For the back-end, enter in the terminal 'bundle i && rails s'
 
 ## Technologies
-JWT Auth
-Ruby on Rails
+* React
+* Redux 
+* JWT Auth
+* Ruby on Rails
 
 ## APIs
-Google Maps API: https://developers.google.com/maps/documentation
-WorldBank API:  https://api.ipgeolocationapi.com/countries
+* Frontend: Google Maps API: https://developers.google.com/maps/documentation
+* Backend: WorldBank API:  https://api.ipgeolocationapi.com/countries
 
 ## Features
 - Interactive map for discovering dishes by country
