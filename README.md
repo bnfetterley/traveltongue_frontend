@@ -33,7 +33,7 @@ I love exploring cultures through food and this app allows you to do just that! 
 ![image](https://github.com/bnfetterley/traveltongue_frontend/blob/master/src/Image_CommentForm.png)
 
 ## Credits & Contributions
-A huge thank you to everyone at Flatiron School who helped me and tried out my project :)
+A huge thank you to everyone at Flatiron School who helped me along the way :)
 
 For any issues, queries, or feedback, please email brifetterley@gmail.com
 
