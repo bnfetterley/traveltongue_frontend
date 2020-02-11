@@ -32,6 +32,7 @@ const newUserToDB = userObj => dispatch => {
     .then(data => {
       dispatch(setUserAction(data.user));
       localStorage.setItem('token', data.token);
+    
     });
 };
 

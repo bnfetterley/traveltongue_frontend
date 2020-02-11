@@ -36,6 +36,7 @@ class App extends Component {
     searchResults: [],
     currentDish: "",
     commentContent:"",
+    login: false
   }
   
   //GET FETCHES!!!!
@@ -97,14 +98,15 @@ class App extends Component {
  //CALLBACK FOR SIGN UP MODAL 
    selectModal = (info) => {
      this.setState({modal: !this.state.modal}) // true/false toggle
+     this.renderLogin()
    }
 
-   //CALLBACK FOR DISH MODAL
+//CALLBACK FOR DISH MODAL
    selectDishModal = (info) => {
     this.setState({dishModal: !this.state.dishModal}) // true/false toggle
   }
 
-   //CALLBACK FOR UPDATING STATE FOR DISH FORM
+//CALLBACK FOR UPDATING STATE FOR DISH FORM
    handleOnChange = (event) => {
      event.preventDefault()
 
@@ -143,31 +145,27 @@ class App extends Component {
          location_id: ""
        })
 
+       this.selectDishModal()
+       window.location.reload()
+
       })}
    
-   //CALLBACK FOR POST FETCH USER
-   handleOnSubmit = (e) => {
-     e.preventDefault()
-    console.log("fetch hit")
+  //RENDER LOGIN info
 
-     fetch(`http://localhost:3000/users`, {
-       method:'POST',
-      headers: { 
-          'Content-type': 'application/json',
-          'accept': 'application/json'
-      },
-      body: JSON.stringify({
-        username: this.state.username,
-        password: this.state.password
-       })
-     })
-     .then(resp => resp.json())
-     .then(json_resp => {
-       this.setState({
-         currentUsername: this.state.username,
-         currentUserID: json_resp.id
-       })
-    
+  renderLogin = (event) => {
+
+  this.setState({
+    login: !this.state.login
+
+  })
+  }
+
+   //CALLBACK FOR UPDATE STATE FOR SIGNUP
+   handleUserChange = (event) => {
+    event.preventDefault()
+
+    this.setState({
+      [event.target.name]: event.target.value
     })
    }
    
@@ -234,14 +232,20 @@ class App extends Component {
           searchResults = {this.state.searchResults}
           setSelectedPlace = {this.setSelectedPlace} 
           /> 
-
+          
+    
           <SignUpModal 
           handleOnSubmit = {this.handleOnSubmit} 
           handleOnChange = {this.handleOnChange} 
           username = {this.state.username} 
           password = {this.state.password} 
           displayModal={this.state.modal} 
-          closeModal={this.selectModal}/>
+          closeModal={this.selectModal}
+          renderLogin = {this.renderLogin}
+          login = {this.state.login}
+          /> 
+        
+          
           
 
           <DishForm 
@@ -260,7 +264,7 @@ class App extends Component {
 
           <Switch> 
 
-           <Route path= "/home" exact render={(props) => 
+           <Route path= "/" exact render={(props) => 
 
                   <MapContainer 
                   setSelectedPlace = {this.setSelectedPlace}  

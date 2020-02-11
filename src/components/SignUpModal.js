@@ -37,7 +37,8 @@ const SignUpModal = props => {
     dispatch(userActions.newUserToDB(signupForm));
     // history.push('/');
 
- 
+    props.closeModal()
+
   };
 
   // Destructuring keys from our local state to use in the form
@@ -46,40 +47,42 @@ const SignUpModal = props => {
         // console.log(this.props)
 
         return (
-        <div className="container">
-              <div className="modal" onClick={ closeModal } style={divStyle}> 
-              <div className="modal-content"   onClick={ e => e.stopPropagation()} >
-              
-              <form onSubmit = {(e) => handleSubmit(e)} action="action_page.php" >
-               <div className="container">
-               <h1>Join the global foodie fam!</h1>
-                <p>Please fill in this form to create an account.</p>
-               <hr/>
 
-                <label for="username"><b>Username</b></label>
-                <input name = "username" onChange = {(e) => handleChange(e)} value = {username} type="textarea" placeholder="Enter Username" required/>
-                 <br></br>
-                 <br></br>
-                <label for="psw"><b>Password</b></label>
-                <input name="password" onChange = {(e) => handleChange(e)}  value = {password} type="password" placeholder="Enter Password" required/>
-              
-                <label for="psw-repeat"><b>Repeat Password</b></label>
-               <input type="password" placeholder="Repeat Password" name="psw-repeat" required/>
-{/* 
-    <label>
-      <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-    </label>
+           
+          
+          
+          //SIGNUPMODAL 
+          <div className="container">
+          <div className="modal" onClick={ closeModal } style={divStyle}> 
+          <div className="modal-content"   onClick={ e => e.stopPropagation()} >
+          
+          <form onSubmit = {(e) => handleSubmit(e)} action="action_page.php" >
+           <div className="container">
+           <h1>Join the global foodie fam!</h1>
+            <p>Please fill in this form to create an account.</p>
+           <hr/>
 
-    <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p> */}
-  <br></br>
-  <br></br>
-    <div class="clearfix">
-    <br></br>
-  <br></br>
-      <button type="submit" class="signupbtn">Explore!</button>
-    </div>
-    
-  </div>
+            <label for="username"><b>Username</b></label>
+            <input name = "username" onChange = {(e) => handleChange(e)} value = {username} type="textarea" placeholder="Enter Username" required/>
+             <br></br>
+             <br></br>
+            <label for="psw"><b>Password</b></label>
+            <input name="password" onChange = {(e) => handleChange(e)}  value = {password} type="password" placeholder="Enter Password" required/>
+          
+            <label for="psw-repeat"><b>Repeat Password</b></label>
+           <input type="password" placeholder="Repeat Password" name="psw-repeat" required/>
+           <br></br>
+            <br></br>
+           <div class="clearfix">
+          <br></br>
+          <br></br>
+  <button type="submit" class="signupbtn">Explore!</button>
+</div>
+
+</div>
+          
+          }
+       
 </form>
 
 
