@@ -76,7 +76,7 @@ const SignUpModal = props => {
            <div class="clearfix">
           <br></br>
           <br></br>
-  <button type="submit" class="signupbtn">Explore!</button>
+  <button type="submit" onClick = {props.renderLogin} class="signupbtn">Explore!</button>
 </div>
 
 </div>

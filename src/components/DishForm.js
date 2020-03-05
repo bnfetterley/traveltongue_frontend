@@ -8,11 +8,7 @@ const DishForm = props => {
     const divStyle = { 
       display: props.displayModal ? 'block' : 'none'
  };
- function closedModal(e) {
-    e.stopPropagation()
-    props.closeModal()
- }
-        
+   
         // Sorting Locations for alphabetical dropdown
         const sortedLocations = props.locations && props.locations.sort(function(a, b){
          const aLower = a.country.toLowerCase() 
@@ -24,7 +20,7 @@ const DishForm = props => {
         
           return (
 
-            <div>
+           
             <div className="modal" onClick={ props.closeModal } style={divStyle}> 
             <div className="modal-content"   onClick={ e => e.stopPropagation()} >
             
@@ -71,7 +67,7 @@ const DishForm = props => {
             <span className="close" onClick={ props.closeModal }> X </span>
      </div>
    </div>
-   </div>
+  
 
         //     <div id= "dishform" show = {this.state.show}>
             

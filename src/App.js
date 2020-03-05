@@ -1,16 +1,15 @@
 import React, { Component, useState, useEffect  } from 'react'
 import LocationContainer from './containers/LocationContainer'
 import MapContainer from './components/Map'
-import logo from './logo.svg';
 import './App.css';
-import { BrowserRouter, Route, Switch, Link, NavLink, Redirect, withRouter } from 'react-router-dom'
+import { Route, Switch, withRouter } from 'react-router-dom'
 import './Map.css';
 import NavBar from './NavBar'
 import DishForm from './components/DishForm'
 import SignUpModal from './components/SignUpModal'
 import 'semantic-ui-css/semantic.min.css'
 import Dish from './components/Dish'
-import Login from './components/Login'
+// import Login from './components/Login'
 
 
 class App extends Component {
@@ -75,7 +74,7 @@ class App extends Component {
     
     }
 
-   // CALLBACKS FOR INFOWINDOW ON MAP
+  // CALLBACKS FOR INFOWINDOW ON MAP
   onClose = props => {
     if (this.state.showingInfoWindow) {
       this.setState({
@@ -97,8 +96,12 @@ class App extends Component {
 
  //CALLBACK FOR SIGN UP MODAL 
    selectModal = (info) => {
-     this.setState({modal: !this.state.modal}) // true/false toggle
-     this.renderLogin()
+     this.setState({
+       modal: !this.state.modal,
+       login: !this.state.login
+    
+    }) // true/false toggle
+     
    }
 
 //CALLBACK FOR DISH MODAL
@@ -209,7 +212,8 @@ class App extends Component {
     .then(json_resp => {
 
     this.setState({
-      comments: [...this.state.comments, json_resp]
+      comments: [...this.state.comments, json_resp],
+      commentContent: ""
     })
 
      })}
