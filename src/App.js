@@ -9,7 +9,7 @@ import DishForm from './components/DishForm'
 import SignUpModal from './components/SignUpModal'
 import 'semantic-ui-css/semantic.min.css'
 import Dish from './components/Dish'
-// import Login from './components/Login'
+import Login from './components/Login'
 
 
 class App extends Component {
@@ -23,6 +23,7 @@ class App extends Component {
     currentUsername: "Katie",
     selectedPlace: "",
     dishModal: false,
+    logInModal: false,
     modal: false,
     username: "",
     password: "",
@@ -103,6 +104,15 @@ class App extends Component {
     }) // true/false toggle
      
    }
+
+   selectLogInModal = (info) => {
+    this.setState({
+      logInModal: !this.state.logInModal,
+      // login: !this.state.login
+   
+   }) // true/false toggle
+    
+  }
 
 //CALLBACK FOR DISH MODAL
    selectDishModal = (info) => {
@@ -219,7 +229,7 @@ class App extends Component {
      })}
     
     render() {
-      console.log(this.state)
+      console.log(this.state, this.props)
 
     const currentUser = this.state.users.find(user => user.id === this.state.currentUserID)
 
@@ -229,6 +239,7 @@ class App extends Component {
  
           <NavBar 
           onClick = {this.selectModal} 
+          onLogInClick = {this.selectLogInModal}
           onClickDish = {this.selectDishModal} 
           locations = {this.state.locations} 
           handleSearchOnChange = {this.handleSearchOnChange}
@@ -266,6 +277,14 @@ class App extends Component {
           image = {this.state.image} 
           />
 
+
+        <Login
+        displayModal={this.state.logInModal} 
+        closeModal={this.selectLogInModal}
+
+        />
+
+
           <Switch> 
 
            <Route path= "/" exact render={(props) => 
@@ -289,6 +308,7 @@ class App extends Component {
                 currentDish = {this.state.currentDish}
                 />
                 }/>
+                 
 
             <Route path = "/dish" render={(props) => 
               <Dish
