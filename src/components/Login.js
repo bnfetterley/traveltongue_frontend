@@ -73,7 +73,7 @@ const Login = props => {
           placeholder="Username"
         />
         <input
-          type="textarea"
+          type="password"
           name="password"
           value={password}
           onChange={handleChange}
