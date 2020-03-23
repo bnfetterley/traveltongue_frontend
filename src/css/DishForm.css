@@ -13,29 +13,6 @@
   }
 
 
-  /* .nameInput {
-      height: 100%
-  } */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #dishform {
     position:absolute;
     height: 336px;
@@ -60,25 +37,3 @@
     z-index: 3
 }
 
-#dishbutton{
-    background:url('./dish.png') no-repeat left;
-    padding-left:10px;
-    background-size: 100%;
-    top: 30%;
-    left: 10%;
-    font-size: 25px;
-    font-weight: bold;
-    display: inline-block;
-    margin: 0 auto;
-    color: #dcfbb4;
-    background-color: green;
-    border: 0.4em solid #d4f7da;
-    border-radius: 50%;
-    transition: all 0.3s;
-    box-sizing: border-box;
-    width: 2m;
-    height: 2em;
-    cursor: pointer;
-    box-shadow: 0 0 0 rgba(0,0,0,0.1), inset 0 0 0 rgba(0,0,0,0.1);
-   
- } 

@@ -3,14 +3,10 @@ import Button from '@bit/semantic-org.semantic-ui-react.button'
 import Comment from '@bit/semantic-org.semantic-ui-react.comment'
 import Form from '@bit/semantic-org.semantic-ui-react.form'
 import Header from '@bit/semantic-org.semantic-ui-react.header'
-import '../CommentDiv.css';
+import '../css/CommentDiv.css';
 
 class CommentDiv extends Component {
 
-  // state = {
-  //   content:
-
-  // }
   
   render() {
     console.log(this.props)

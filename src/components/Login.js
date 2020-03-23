@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import userActions from '../redux/actions';
 // import actions from './redux/actions';
-import '../SignUpModal.css';
+import '../css/SignUpModal.css';
 
 
 const Login = props => {

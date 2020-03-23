@@ -1,9 +1,9 @@
 import React, { Component, useState, useEffect  } from 'react'
 import { Link } from 'react-router-dom'
-import './Nav.css';
+import '../css/Nav.css';
 import 'semantic-ui-css/semantic.min.css'
 import { useSelector, useDispatch } from 'react-redux'
-import userActions from './redux/actions';
+import userActions from '../redux/actions';
 
 const NavBar = (props) => {
     
