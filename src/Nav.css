@@ -11,9 +11,14 @@
 
 .logo{
 	display: flex;
-  align-items: right;
+    align-items: center;
+    text-align: center;
 }
 
+.ui.secondary.menu{
+display: flex;
+justify-content: space-evenly;
+}
 
 #search.ui.category.search{
 	position: absolute;
@@ -97,7 +102,7 @@ input, button
     left: 0;
     right: 0;
     width: 550px;
-    padding: 35px;
+    padding: 0px;
     margin: -83px auto 0 auto;
     background-color: #ff7575;
     border-radius: 20px;
@@ -126,7 +131,7 @@ input[type="text"]::placeholder
 #s-cover
 {
     width: 1px;
-    padding-left: 35px;
+    padding-left: 2px;
 }
 
 button

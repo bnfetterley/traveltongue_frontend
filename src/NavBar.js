@@ -12,8 +12,7 @@ const NavBar = (props) => {
         dispatch(userActions.logoutUser());
         };
    
-   
-        
+
 
         return (
 
@@ -21,28 +20,30 @@ const NavBar = (props) => {
           // onClick={this.toggleCollapse}
           
           >
+          <div> <h1 className = "logo">TravelTongue</h1>    </div>
                 <a class="item">
                 <Link to="/">Home</Link>
                 </a>
                 
 
-                <div onClick={ props.onClick } class="left item">
+                <a onClick={ props.onClick } class="item" >
                    Become a Foodie 
-                 </div>
+                 </a>
 
-                 <div onClick={ props.onLogInClick } class="left item">
+                 <a onClick={ props.onLogInClick } class="item">
                    LogIn
-                 </div>
+                 </a>
+                 
 
+                 <a class="item">
                  <Link to="/" onClick={handleLogout}>Logout</Link>
-                
+                 </a>
 
-                 <a onClick={ props.onClickDish}class= "left item">
+                 <a onClick={ props.onClickDish} class="item">
                     Add a Dish
               
                  </a>
 
-                  <div class="center item"> <h1 className = "logo">TravelTongue</h1>    </div>
 
                   </div>
     
