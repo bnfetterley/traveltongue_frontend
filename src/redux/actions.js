@@ -59,7 +59,9 @@ const loginUserToDB = userCredentials => dispatch => {
     .then(data => {
       dispatch(setUserAction(data.user));
       localStorage.setItem('token', data.token);
+      console.log("fetch hit", data)
     });
+
 };
 
 const persistUser = () => dispatch => {

@@ -6,18 +6,41 @@ import { BrowserRouter } from "react-router-dom"
 import * as serviceWorker from './serviceWorker';
 import MapContainer from './components/Map'
 import SignUpModal from './components/SignUpModal'
-
+import State from './State'
 import thunk from 'redux-thunk'
 import { Provider } from 'react-redux'
-import { createStore, applyMiddleware} from 'redux'
+import { createStore, applyMiddleware, compose, combineReducers} from 'redux'
 import rootReducer from './redux/rootReducer.js'
+import { useSelector, useDispatch } from 'react-redux'
+// import login from ./State
 
 
-const store = createStore(rootReducer, applyMiddleware(thunk))
+
+// const store = createStore(rootReducer, applyMiddleware(thunk))
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+let store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)))
+
+// const State = (props) => {
+  
+//     const username = useSelector(state => state.username
+//         )
+//         const login = useSelector(state => state)
+//         // export default login
+//     console.log(username)
+    
+//     //   return (
+//     //      null
+//     //   )}
+//     }
+// export default State
+
+
+
 
 ReactDOM.render(<BrowserRouter>
 <Provider store={store}>
-<App />
+<State />
+{/* <App /> */}
 </Provider>
 
 </BrowserRouter>, document.getElementById("root"));
