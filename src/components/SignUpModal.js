@@ -1,5 +1,5 @@
 import React, { Component, useState } from 'react'
-import '../SignUpModal.css';
+import '../css/SignUpModal.css';
 import { useDispatch } from 'react-redux';
 import userActions from '../redux/actions.js';
 

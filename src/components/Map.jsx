@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react";
-import '../Map.css';
+// import '../css//Map.css';
 import MapStyle from '../MapStyle'
 import DishForm from './DishForm'
 import SearchForm from "./SearchForm";

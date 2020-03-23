@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import '../DishForm.css';
+import '../css/DishForm.css';
 import { Input, Label, Select, Textarea } from '@rebass/forms'
 
 

@@ -1,10 +1,10 @@
 import React, { Component, useState, useEffect  } from 'react'
 import LocationContainer from './containers/LocationContainer'
 import MapContainer from './components/Map'
-import './App.css';
+import './css/App.css';
 import { Route, Switch, withRouter } from 'react-router-dom'
 import './Map.css';
-import NavBar from './NavBar'
+import NavBar from './components/NavBar'
 import DishForm from './components/DishForm'
 import SignUpModal from './components/SignUpModal'
 import 'semantic-ui-css/semantic.min.css'

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import CommentDiv from './CommentDiv'
-import '../Dish.css';
+import '../css/Dish.css';
 
 export default class Dish extends Component {
     render() {
