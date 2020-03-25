@@ -68,63 +68,6 @@ const DishForm = props => {
      </div>
    </div>
   
-
-        //     <div id= "dishform" show = {this.state.show}>
-            
-        //         {/* <section>
-        //         <button id = "dishbutton" onClick={() => this.customDialog.show()}>Add a Dish!</button>
-        //         </section> */}
-        //          <SkyLight show={this.state.show} dialogStyles={myBigGreenDialog} hideOnOverlayClicked 
-        //         //  ref={ref => this.customDialog = ref} 
-        //          title="SHARE YOUR FAVORITE DISH :D">
-         
-
-        //  <form onSubmit = {(event) => this.props.handleNewDish(event, this.state)}>
-
-        //        <img class = "resize" src = {this.state.image && this.state.image}></img>  {this.state.location_name && this.state.name && <div>  <h1> {this.state.name} from {this.state.location_name} </h1></div>}
-                   
-                
-                   
-        //         <Label>Where is this dish from?</Label>
-        //          <Select 
-        //          name='location_name'
-        //          onChange = {(event) => this.handleStateChange(event)} value = {this.state.location_name} placeholder = "Choose Country">
-        //                 {
-        //                 this.props.locations && sortedLocations.map((location) => 
-
-        //                  <option key = {location.id}> {location.country} </option>)
-        //                  }
-        //         </Select>
-        //         <br></br>
-
-        //         <Label>What is the name of this dish?</Label>
-        //         <Textarea
-        //          onChange = {(event) => this.handleOtherStateChange(event)}
-        //          value = {this.state.name}
-        //          name='name'
-        //         />
-        //         <br></br>
-
-        //         <Label>When and how is this dish usually eaten? Tell us more!!</Label>
-        //         <Textarea
-        //          onChange = {(event) => this.handleOtherStateChange(event)}
-        //          value = {this.state.description}
-        //          name='description'
-        //         />
-        //         <br></br>
-
-        //         <Label>Link us to a picture from google!</Label>
-        //         <Textarea
-        //          onChange = {(event) => this.handleOtherStateChange(event)}
-        //          value = {this.state.image}
-        //          name='image'
-        //         />
-        //         <br></br>
-        //         <button> <h1> Submit 🤤 </h1> </button>
-        //         </form>
-        //         </SkyLight>
-                
-                //  </div>
         )
 
 

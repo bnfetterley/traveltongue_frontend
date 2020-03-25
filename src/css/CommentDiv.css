@@ -1,9 +1,11 @@
 .reply{
-    width: 50em;
-    height: 1em;
-    left: 3%;
+    width: 40em;
+    height: 2em;
+    /* left: 3%; */
+    justify-content: center;
 }
 
 .commentGroup{
     width: 100%;
+    justify-content: center;
 }

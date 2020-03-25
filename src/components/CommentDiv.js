@@ -19,7 +19,7 @@ class CommentDiv extends Component {
       Would you try this? Comment below!
     </Header>
 
-    <Comment>
+    <Comment className = "commentGroup">
       <Comment.Avatar src='https://react.semantic-ui.com/images/avatar/small/jenny.jpg' />
       <Comment.Content>
         <Comment.Author as='a'>Bri</Comment.Author>
