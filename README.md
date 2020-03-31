@@ -27,7 +27,9 @@ I love exploring cultures through food and this app allows you to do just that! 
 * Backend: WorldBank API:  https://api.ipgeolocationapi.com/countries
 
 ## Features
+- JSON Web Tokens and local storage to store encrypted user information client-side and bcrypt server-side 
 - Interactive map for discovering dishes by country
+- Dynamic map that renders dish icons to countries
 - Pop up modal forms for seamless user input![image](https://github.com/bnfetterley/traveltongue_frontend/blob/master/src/Image_DishForm.png)
 - User's can comment on dishes they have tried or want to try
 ![image](https://github.com/bnfetterley/traveltongue_frontend/blob/master/src/Image_CommentForm.png)
