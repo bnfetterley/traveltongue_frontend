@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect  } from 'react'
+import React, { Component} from 'react'
 import LocationContainer from './containers/LocationContainer'
 import MapContainer from './components/Map'
 import './css/App.css';
@@ -19,12 +19,13 @@ class App extends Component {
     dishes: [],
     users: [],
     comments: [],
-    currentUserID: 4,
-    currentUsername: "Katie",
     selectedPlace: "",
+
     dishModal: false,
     logInModal: false,
     modal: false,
+    login: false,
+
     username: "",
     password: "",
     location_id: "",
@@ -32,11 +33,13 @@ class App extends Component {
     name: "",
     description: "",
     image: "",
+
     searchValue: "",
+
     searchResults: [],
+
     currentDish: "",
-    commentContent:"",
-    login: false
+    commentContent:""
   }
   
   //GET FETCHES!!!!
@@ -73,6 +76,10 @@ class App extends Component {
     comments: json_resp
      }))
     
+     this.setState({
+       currentDish: JSON.parse(localStorage.getItem('currentDish'))
+     })
+
     }
 
   // CALLBACKS FOR INFOWINDOW ON MAP
@@ -91,7 +98,7 @@ class App extends Component {
        this.setState ({
          selectedPlace: selectedPlace.country
        })
-       localStorage.setItem( 'selectedPlace', selectedPlace.country )
+      //  localStorage.setItem( 'selectedPlace', selectedPlace.country )
        this.props.history.push("/location")
   }
 
@@ -144,7 +151,7 @@ class App extends Component {
        name: this.state.name,
        description: this.state.description,
        image: this.state.image,
-       user_id: this.state.currentUserID,
+       user_id: this.props.login.id,
        location_id: this.state.locations.find(location => location.country === this.state.location_name).id
        })
      })
@@ -157,14 +164,13 @@ class App extends Component {
          image: "",
          location_id: ""
        })
-
+        console.log("fetch hit", json_resp)
        this.selectDishModal()
        window.location.reload()
 
       })}
    
   //RENDER LOGIN info
-
   renderLogin = (event) => {
 
   this.setState({
@@ -194,12 +200,18 @@ class App extends Component {
 
     //CALLBACK FOR DISH ON CLICK
     handleDishClick = (e, dish) => {
-      console.log(dish)
-      this.setState({
-        currentDish: dish
-      })
-      localStorage.setItem( 'currentDish', dish )
-      this.props.history.push("/dish")
+   
+      fetch(`http://localhost:3000/dishes/${dish.id}`)
+      .then(resp => resp.json())
+      .then(json_resp => {
+        localStorage.setItem( 'currentDish', JSON.stringify(dish) )
+        let dishSet = JSON.parse(localStorage.getItem('currentDish'))
+        console.log(json_resp, dishSet)
+        this.setState({
+          currentDish: dishSet
+        })}
+      )
+      this.props.history.push(`/dish/${dish.id}`)
   }
 
   //CALLBACK FOR COMMENT SUBMIT

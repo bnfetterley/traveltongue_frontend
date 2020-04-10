@@ -34,13 +34,16 @@ const Login = props => {
       dispatch(userActions.loginUserToDB(loginForm));
       props.closeModal()
       // props.history.push('/');
-      // useEffect(() => {
-        if (localStorage.token) {
-          dispatch(userActions.persistUser())
-        }
       // })
     };
-  
+    
+    useEffect(() => {
+      if (localStorage.token) {
+        dispatch(userActions.persistUser())
+      }
+    }, []
+    )
+
     const handleChange = e =>
       setLoginForm({ ...loginForm, [e.target.name]: e.target.value });
   

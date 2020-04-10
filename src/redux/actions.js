@@ -17,6 +17,10 @@ const clearUserAction = () => ({
   type: 'CLEAR_USER'
 });
 
+// const setDishAction = () => ({
+//   type: 'SET_DISH'
+// });
+
 // Fetch
 
 const newUserToDB = userObj => dispatch => {

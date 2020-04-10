@@ -1,10 +1,6 @@
 import React, { Component } from "react";
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react";
-// import '../css//Map.css';
 import MapStyle from '../MapStyle'
-import DishForm from './DishForm'
-import SearchForm from "./SearchForm";
-import LocationContainer from '../containers/LocationContainer'
 import ReactDOM from 'react-dom';
 
 
@@ -51,12 +47,12 @@ export class MapContainer extends Component {
 
     console.log(this.state, this.props);
 
-    //this doesn't work?
+
     const style = {
       width: '20',
       height: '20'
     }
-    //what does this do??
+  
     if (!this.props.google) {
       return <div>Loading...</div>;
     }

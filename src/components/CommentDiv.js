@@ -12,14 +12,14 @@ class CommentDiv extends Component {
     console.log(this.props)
     
     return (
-      <div>
+      <div className = "commentGroup">
    
    <Comment.Group className = "commentGroup">
     <Header as='h3' dividing>
       Would you try this? Comment below!
     </Header>
 
-    <Comment>
+    <Comment className = "reply" >
       <Comment.Avatar src='https://react.semantic-ui.com/images/avatar/small/jenny.jpg' />
       <Comment.Content>
         <Comment.Author as='a'>Bri</Comment.Author>
@@ -34,7 +34,7 @@ class CommentDiv extends Component {
     </Comment>
 
     {this.props.comments.map(comment => 
-      <Comment>
+      <Comment className = "reply" >
       <Comment.Avatar src='https://react.semantic-ui.com/images/avatar/small/jenny.jpg' />
       <Comment.Content>
         <Comment.Author as='a'>{this.props.currentUsername}</Comment.Author>
@@ -49,8 +49,15 @@ class CommentDiv extends Component {
     </Comment>
       )}
 
-    <Form onSubmit = {(e) => this.props.handleCommentSubmit(e)}reply>
-      <Form.TextArea value = {this.props.commentContent} onChange = {(e) => this.props.handleOnChange(e)} name = "commentContent"/>
+    <Form  onSubmit = {(e) => this.props.handleCommentSubmit(e)}reply>
+      <Form.TextArea  className = "reply" value = {this.props.commentContent} onChange = {(e) => this.props.handleOnChange(e)} name = "commentContent"/>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
       <Button content='Add Reply' className = "reply" labelPosition='left' icon='edit' primary />
     </Form>
   </Comment.Group>
