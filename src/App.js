@@ -76,6 +76,10 @@ class App extends Component {
     comments: json_resp
      }))
     
+     this.setState({
+       currentDish: JSON.parse(localStorage.getItem('currentDish'))
+     })
+
     }
 
   // CALLBACKS FOR INFOWINDOW ON MAP
@@ -167,7 +171,6 @@ class App extends Component {
       })}
    
   //RENDER LOGIN info
-
   renderLogin = (event) => {
 
   this.setState({
@@ -201,13 +204,14 @@ class App extends Component {
       fetch(`http://localhost:3000/dishes/${dish.id}`)
       .then(resp => resp.json())
       .then(json_resp => {
-        console.log(json_resp)
-      this.setState({
-        currentDish: json_resp
-      })}
+        localStorage.setItem( 'currentDish', JSON.stringify(dish) )
+        let dishSet = JSON.parse(localStorage.getItem('currentDish'))
+        console.log(json_resp, dishSet)
+        this.setState({
+          currentDish: dishSet
+        })}
       )
       this.props.history.push(`/dish/${dish.id}`)
-      // localStorage.setItem( 'currentDish', dish )
   }
 
   //CALLBACK FOR COMMENT SUBMIT

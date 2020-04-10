@@ -1,0 +1,50 @@
+/* .form-dark .font-small {
+    font-size: 0.8rem; }
+  
+  .form-dark [type="radio"] + label,
+  .form-dark [type="checkbox"] + label {
+    font-size: 0.8rem; }
+  
+  .form-dark [type="checkbox"] + label:before {
+    top: 2px;
+    width: 15px;
+    height: 15px; }
+  
+  .form-dark .md-form label {
+    color: #fff; }
+  
+  .form-dark input[type=email]:focus:not([readonly]) {
+    border-bottom: 1px solid #00C851;
+    -webkit-box-shadow: 0 1px 0 0 #00C851;
+    box-shadow: 0 1px 0 0 #00C851; }
+  
+  .form-dark input[type=email]:focus:not([readonly]) + label {
+    color: #fff; }
+  
+  .form-dark input[type=password]:focus:not([readonly]) {
+    border-bottom: 1px solid #00C851;
+    -webkit-box-shadow: 0 1px 0 0 #00C851;
+    box-shadow: 0 1px 0 0 #00C851; }
+  
+  .form-dark input[type=password]:focus:not([readonly]) + label {
+    color: #fff; }
+  
+ 
+  .form-dark .modal-header {
+      border-bottom: none;
+  } */
+
+
+  .modal {
+    width: 2000px;
+    max-width: 100%;
+  }
+
+  .container{
+    height: 100%;
+    /* max-width: 100%; */
+  }
+
+  .modal-content{
+    height: 60%;
+  }

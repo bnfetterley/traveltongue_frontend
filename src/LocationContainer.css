@@ -1,0 +1,9 @@
+#location {
+    position:absolute;
+    height: 336px;
+	width: 790px;
+	background-repeat: no-repeat;
+	background-position: 10px 10px;
+	/* [COLOR="Red"]position: relative;[/COLOR] */
+	z-index: 3
+}   
