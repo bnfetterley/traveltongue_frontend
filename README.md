@@ -1,8 +1,8 @@
-# TravelingTongue
+# TravelTongue
 <!-- A little info about your project and/ or overview that explains what the project is about. -->
 ![image](https://github.com/bnfetterley/traveltongue_frontend/blob/master/src/Image_Home.png)
 ![image](https://github.com/bnfetterley/traveltongue_frontend/blob/master/src/Image_DishShow.png)
-TravelingTongue is a web app that allows users to discover local dishes from around the world.
+TravelTongue is a web app that allows users to discover local dishes from around the world.
 
 ## Motivation
 <!-- A short description of the motivation behind the creation and maintenance of the project. This should explain why the project exists. -->
@@ -32,7 +32,8 @@ I love exploring cultures through food and this app allows you to do just that! 
 - Dynamic map that renders dish icons to countries
 - Pop up modal forms for seamless user input![image](https://github.com/bnfetterley/traveltongue_frontend/blob/master/src/Image_DishForm.png)
 - User's can comment on dishes they have tried or want to try
-![image](https://github.com/bnfetterley/traveltongue_frontend/blob/master/src/Image_CommentForm.png)
+- Controlled Forms
+
 
 ## Credits & Contributions
 A huge thank you to everyone at Flatiron School who helped me along the way :)
