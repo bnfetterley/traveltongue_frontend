@@ -2,6 +2,7 @@
   "name": "traveltongue_frontend",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://brifetterley.com",
   "dependencies": {
     "@bit/semantic-org.semantic-ui-react.button": "^0.86.0",
     "@bit/semantic-org.semantic-ui-react.comment": "^0.86.0",
@@ -13,6 +14,7 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "bootstrap": "^4.4.1",
+    "gh-pages": "^3.0.0",
     "google-maps-react": "^2.0.2",
     "jquery": "^3.4.1",
     "mdbreact": "^4.24.0",
