@@ -1,36 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../css/DishForm.css';
 import { Label, Select, Textarea } from '@rebass/forms';
-import { useDispatch } from 'react-redux';
-import userActions from '../redux/actions.js';
 
 const DishForm = (props) => {
-  const [signupForm, setSignupForm] = useState({
-    username: '',
-    password: '',
-  });
-
-  // Controlled form functions
-  const handleChange = (e) =>
-    setSignupForm({ ...signupForm, [e.target.name]: e.target.value });
-
-  // initializing dispatch
-  const dispatch = useDispatch();
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // const { history } = props;
-    dispatch(userActions.newUserToDB(signupForm));
-    // history.push('/');
-
-    props.closeModal();
-  };
-
-  // Destructuring keys from our local state to use in the form
-  const { username, password } = signupForm;
-
-  // console.log(this.props)
-
   const divStyle = {
     display: props.displayModal ? 'block' : 'none',
   };
@@ -49,12 +21,14 @@ const DishForm = (props) => {
   return (
     <div className="modal" onClick={props.closeModal} style={divStyle}>
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+        <span className="close" onClick={props.closeModal}>
+          {' '}
+          X{' '}
+        </span>
         <form
           onSubmit={(e) => props.handleDishSubmit(e)}
           action="action_page.php"
         >
-          {/* <img className = "resize" src = {this.state.image && this.state.image}></img>  {this.state.location_name && this.state.name && <div>  <h1> {this.state.name} from {this.state.location_name} </h1></div>} */}
-
           <Label>Where is this dish from?</Label>
           <Select
             name="location_name"
@@ -99,11 +73,6 @@ const DishForm = (props) => {
             <h1> Submit </h1>{' '}
           </button>
         </form>
-        )
-        <span className="close" onClick={props.closeModal}>
-          {' '}
-          X{' '}
-        </span>
       </div>
     </div>
   );

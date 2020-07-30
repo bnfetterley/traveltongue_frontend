@@ -1,3 +1,8 @@
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
+
+const MySwal = withReactContent(Swal);
+
 // API CONSTANTS
 
 const BASE_URL = 'https://traveltongue-backend.herokuapp.com';
@@ -57,12 +62,25 @@ const loginUserToDB = (userCredentials) => (dispatch) => {
     },
     body: JSON.stringify(userCredentials),
   };
+
   fetch(LOGIN_URL, config)
     .then((r) => r.json())
     .then((data) => {
-      dispatch(setUserAction(data.user));
-      localStorage.setItem('token', data.token);
-      console.log('fetch hit', data);
+      if (data.errors) {
+        console.log(data);
+        MySwal.fire({
+          title: 'Login not found.',
+          footer: 'Check your password, try again or signup.',
+        });
+      } else {
+        console.log('fetch hit');
+        MySwal.fire({
+          title: 'Login successful - Happy Exploring!',
+          // footer: 'Youre in, Happy Exploring!',
+        });
+        dispatch(setUserAction(data.user));
+        localStorage.setItem('token', data.token);
+      }
     });
 };
 
@@ -83,6 +101,7 @@ const persistUser = () => (dispatch) => {
 const logoutUser = () => (dispatch) => {
   dispatch(clearUserAction());
   localStorage.clear();
+  MySwal.fire({ title: 'Logout successful', footer: 'Come back soon!' });
 };
 
 export default {

@@ -21,7 +21,7 @@ class App extends Component {
 
     dishModal: false,
     logInModal: false,
-    modal: true,
+    modal: localStorage.getItem('token') === null && true,
     login: true,
 
     username: '',
@@ -166,13 +166,6 @@ class App extends Component {
       });
   };
 
-  //RENDER LOGIN info
-  // renderLogin = (event) => {
-  //   this.setState({
-  //     logInModal: !this.state.login,
-  //   });
-  // };
-
   //CALLBACK FOR UPDATE STATE FOR SIGNUP
   handleUserChange = (event) => {
     event.preventDefault();
@@ -231,13 +224,6 @@ class App extends Component {
         });
       });
   };
-
-  //CALLBACK TO CHANGE SIGN UP FORM TO DISH FORM
-
-  // renderDishForm = (e) => {
-  //   e.preventDefault();
-
-  // };
 
   render() {
     console.log(this.state, this.props);
