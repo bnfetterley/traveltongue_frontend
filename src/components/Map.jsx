@@ -51,13 +51,6 @@ export class MapContainer extends Component {
   }
 
   render() {
-    console.log(this.state, this.props);
-
-    const style = {
-      width: '20',
-      height: '20',
-    };
-
     if (!this.props.google) {
       return <div>Loading...</div>;
     }
@@ -126,6 +119,7 @@ export class MapContainer extends Component {
                 {this.state.selectedPlace.country}
               </h1>
               <img
+                alt="dish"
                 src={
                   this.state.selectedPlace.icon &&
                   this.state.selectedPlace.icon.url

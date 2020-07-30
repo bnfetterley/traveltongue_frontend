@@ -1,8 +1,7 @@
-import React, { Component, useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import '../css/Nav.css';
-// import 'semantic-ui-css/semantic.min.css'
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import userActions from '../redux/actions';
 
 const NavBar = (props) => {
@@ -13,7 +12,7 @@ const NavBar = (props) => {
 
   return (
     <div
-      class="ui secondary  menu"
+      className="ui secondary  menu"
       // onClick={this.toggleCollapse}
     >
       <div>
@@ -24,21 +23,21 @@ const NavBar = (props) => {
         <Link to="/">Home</Link>
       </a>
 
-      <a onClick={props.onClick} class="item">
+      <a onClick={props.onClick} className="item">
         Become a Foodie
       </a>
 
-      <a onClick={props.onLogInClick} class="item">
+      <a onClick={props.onLogInClick} className="item">
         LogIn
       </a>
 
-      <a class="item">
+      <a className="item">
         <Link to="/" onClick={handleLogout}>
           Logout
         </Link>
       </a>
 
-      <a onClick={props.onClickDish} class="item">
+      <a onClick={props.onClickDish} className="item">
         Add a Dish
       </a>
     </div>

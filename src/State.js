@@ -1,19 +1,15 @@
-import App from './App'
-import React, { useEffect } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import actions from './redux/actions';
+import App from './App';
+import React from 'react';
+import { useSelector } from 'react-redux';
 
 const State = (props) => {
-  
-    const username = useSelector(state => state.username
-        )
+  const username = useSelector((state) => state.username);
 
-        const login = useSelector(state => state)
+  const login = useSelector((state) => state);
 
-    console.log(username)
-    
-      return (
-        <App login = {login}/>
-      )}
+  console.log(username);
 
-export default State
+  return <App login={login} />;
+};
+
+export default State;

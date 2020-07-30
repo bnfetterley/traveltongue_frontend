@@ -38,6 +38,7 @@ class App extends Component {
 
     currentDish: '',
     commentContent: '',
+    userLoggedIn: false,
   };
 
   //GET FETCHES!!!!
@@ -49,7 +50,7 @@ class App extends Component {
           locations: json_resp,
         })
       );
-    console.log('fetch hit');
+    // console.log('fetch hit');
 
     fetch(`https://traveltongue-backend.herokuapp.com/dishes`)
       .then((resp) => resp.json())
@@ -92,7 +93,7 @@ class App extends Component {
 
   //SETS SELECTED COUNTRY IN STATE
   setSelectedPlace = (e, selectedPlace) => {
-    console.log(e, selectedPlace);
+    // console.log(e, selectedPlace);
     this.setState({
       selectedPlace: selectedPlace.country,
     });
@@ -100,7 +101,7 @@ class App extends Component {
     this.props.history.push('/location');
   };
 
-  //CALLBACK FOR SIGN UP MODAL
+  //CALLBACK TO TOGGLE SIGN UP MODAL
   selectModal = (info) => {
     this.setState({
       modal: !this.state.modal,
@@ -108,11 +109,11 @@ class App extends Component {
     }); // true/false toggle
   };
 
+  //CALLBACK TO TOGGLE LOGIN MODAL
   selectLogInModal = (info) => {
     this.setState({
       logInModal: !this.state.logInModal,
-      // login: !this.state.login
-    }); // true/false toggle
+    });
   };
 
   //CALLBACK FOR DISH MODAL
@@ -124,13 +125,6 @@ class App extends Component {
   handleOnChange = (event) => {
     event.preventDefault();
 
-    const countryID =
-      event.target.name === 'location_name' &&
-      this.state.locations.find(
-        (location) => location.country === event.target.value
-      ).id;
-    console.log(countryID);
-
     this.setState({
       [event.target.name]: event.target.value,
     });
@@ -139,6 +133,7 @@ class App extends Component {
   //CALLBACK TO POST A NEW DISH
   handleDishSubmit = (e) => {
     e.preventDefault();
+    // console.log('DISH FETCH HIT');
     fetch(`https://traveltongue-backend.herokuapp.com/dishes`, {
       method: 'POST',
       headers: {
@@ -165,7 +160,7 @@ class App extends Component {
           image: '',
           location_id: '',
         });
-        console.log('fetch hit', json_resp);
+        // console.log('fetch hit', json_resp);
         this.selectDishModal();
         window.location.reload();
       });
@@ -204,7 +199,7 @@ class App extends Component {
       .then((json_resp) => {
         localStorage.setItem('currentDish', JSON.stringify(dish));
         let dishSet = JSON.parse(localStorage.getItem('currentDish'));
-        console.log(json_resp, dishSet);
+        // console.log(json_resp, dishSet);
         this.setState({
           currentDish: dishSet,
         });
@@ -215,7 +210,7 @@ class App extends Component {
   //CALLBACK FOR COMMENT SUBMIT
   handleCommentSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state.commentContent, this.state.currentDish.id);
+    // console.log(this.state.commentContent, this.state.currentDish.id);
     fetch(`https://traveltongue-backend.herokuapp.com/comments`, {
       method: 'POST',
       headers: {
@@ -236,6 +231,13 @@ class App extends Component {
         });
       });
   };
+
+  //CALLBACK TO CHANGE SIGN UP FORM TO DISH FORM
+
+  // renderDishForm = (e) => {
+  //   e.preventDefault();
+
+  // };
 
   render() {
     console.log(this.state, this.props);
@@ -280,6 +282,8 @@ class App extends Component {
           name={this.state.name}
           description={this.state.description}
           image={this.state.image}
+          renderDishForm={this.renderDishForm}
+          userLoggedIn={this.state.userLoggedIn}
         />
 
         <Login

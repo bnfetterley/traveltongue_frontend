@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react';
+import React, { useState } from 'react';
 import '../css/SignUpModal.css';
 import { useDispatch } from 'react-redux';
 import userActions from '../redux/actions.js';
@@ -50,7 +50,7 @@ const SignUpModal = (props) => {
               <p>Please fill in this form to create an account.</p>
               <hr />
 
-              <label for="username">
+              <label htmlFor="username">
                 <b>Username</b>
               </label>
               <input
@@ -63,7 +63,7 @@ const SignUpModal = (props) => {
               />
               <br></br>
               <br></br>
-              <label for="psw">
+              <label htmlFor="psw">
                 <b>Password</b>
               </label>
               <input
@@ -75,7 +75,7 @@ const SignUpModal = (props) => {
                 required
               />
 
-              <label for="psw-repeat">
+              <label htmlFor="psw-repeat">
                 <b>Repeat Password</b>
               </label>
               <input
@@ -86,13 +86,13 @@ const SignUpModal = (props) => {
               />
               <br></br>
               <br></br>
-              <div class="clearfix">
+              <div className="clearfix">
                 <br></br>
                 <br></br>
                 <button
                   type="submit"
                   onClick={props.renderLogin}
-                  class="signupbtn"
+                  className="signupbtn"
                 >
                   Explore!
                 </button>
