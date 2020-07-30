@@ -14,13 +14,16 @@ export default class Dish extends Component {
         <br></br>
         <p>{this.props.currentDish.description}</p>
 
+        <h3>Would you try this? Have you tried this? Comment below!</h3>
+
         <CommentDiv
-          id="comments"
-          currentUsername={this.props.currentUsername}
+          username={this.props.username}
+          id={this.props.id}
           comments={this.props.comments}
           handleCommentSubmit={this.props.handleCommentSubmit}
           handleOnChange={this.props.handleOnChange}
           commentContent={this.props.commentContent}
+          username={this.props.username}
         />
       </div>
     );

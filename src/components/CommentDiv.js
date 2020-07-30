@@ -12,10 +12,9 @@ class CommentDiv extends Component {
     return (
       <div className="commentGroup">
         <Comment.Group className="commentGroup">
-          <Header as="h3" dividing>
-            Would you try this? Comment below!
-          </Header>
-
+          {/* <Header className="reply" as="h3">
+            Would you try this? Have you tried this? Comment below!
+          </Header> */}
           <Comment className="reply">
             <Comment.Avatar src="https://react.semantic-ui.com/images/avatar/small/jenny.jpg" />
             <Comment.Content>
@@ -27,30 +26,31 @@ class CommentDiv extends Component {
                 OMG! YUM!!!!!!!!!!!!!!!!!!!!!!! My fav :) :){' '}
               </Comment.Text>
               <Comment.Actions>
-                <Comment.Action>Reply</Comment.Action>
+                {/* <Comment.Action>Reply</Comment.Action> */}
               </Comment.Actions>
             </Comment.Content>
           </Comment>
 
+          <br></br>
           {this.props.comments.map((comment) => (
             <Comment className="reply">
               <Comment.Avatar src="https://react.semantic-ui.com/images/avatar/small/jenny.jpg" />
               <Comment.Content>
-                <Comment.Author as="a">
-                  {this.props.currentUsername}
-                </Comment.Author>
+                <Comment.Author as="a">{this.props.username}</Comment.Author>
                 <Comment.Metadata>
                   <div>{comment.created_at}</div>
                 </Comment.Metadata>
                 <Comment.Text>{comment.content} </Comment.Text>
                 <Comment.Actions>
-                  <Comment.Action>Reply</Comment.Action>
+                  {/* <Comment.Action>Reply</Comment.Action> */}
                 </Comment.Actions>
               </Comment.Content>
             </Comment>
           ))}
 
-          <Form onSubmit={(e) => this.props.handleCommentSubmit(e)} reply>
+          <br></br>
+
+          <Form onSubmit={(e) => this.props.handleCommentSubmit(e)}>
             <Form.TextArea
               className="reply"
               value={this.props.commentContent}
@@ -59,11 +59,7 @@ class CommentDiv extends Component {
             />
             <br></br>
             <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
+
             <Button
               content="Add Reply"
               className="reply"

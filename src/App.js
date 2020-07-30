@@ -50,7 +50,6 @@ class App extends Component {
           locations: json_resp,
         })
       );
-    // console.log('fetch hit');
 
     fetch(`https://traveltongue-backend.herokuapp.com/dishes`)
       .then((resp) => resp.json())
@@ -203,7 +202,7 @@ class App extends Component {
   //CALLBACK FOR COMMENT SUBMIT
   handleCommentSubmit = (e) => {
     e.preventDefault();
-    // console.log(this.state.commentContent, this.state.currentDish.id);
+
     fetch(`https://traveltongue-backend.herokuapp.com/comments`, {
       method: 'POST',
       headers: {
@@ -212,7 +211,7 @@ class App extends Component {
       },
       body: JSON.stringify({
         content: this.state.commentContent,
-        user_id: this.state.currentUserID,
+        user_id: this.props.login.id,
         dish_id: this.state.currentDish.id,
       }),
     })
@@ -319,7 +318,8 @@ class App extends Component {
                 comments={this.state.comments.filter(
                   (comment) => comment.dish_id === this.state.currentDish.id
                 )}
-                currentUsername={this.state.currentUsername}
+                username={this.props.login.username}
+                id={this.props.login.id}
                 users={this.state.users}
               />
             )}

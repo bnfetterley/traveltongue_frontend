@@ -1,14 +1,13 @@
-.reply{
-    width: 40em;
-    height: 2em;
-    /* left: 3%; */
-    justify-content: center;
+.reply {
+  width: 30em;
+  height: 2em;
+  /* left: 3%; */
+  justify-content: left;
 }
 
-.commentGroup{
-
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 40%;
+.commentGroup {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
 }
