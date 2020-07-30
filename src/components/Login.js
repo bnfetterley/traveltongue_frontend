@@ -51,6 +51,10 @@ const Login = (props) => {
     <div className="container">
       <div className="modal" onClick={closeModal} style={divStyle}>
         <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+          <span className="close" onClick={closeModal}>
+            {' '}
+            X{' '}
+          </span>
           <form onSubmit={handleSubmit}>
             <h1>Login Page</h1>
             <input
@@ -69,10 +73,6 @@ const Login = (props) => {
             />
             <input type="submit" />
           </form>
-          <span className="close" onClick={closeModal}>
-            {' '}
-            X{' '}
-          </span>
         </div>
       </div>
     </div>

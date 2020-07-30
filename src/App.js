@@ -21,8 +21,8 @@ class App extends Component {
 
     dishModal: false,
     logInModal: false,
-    modal: false,
-    login: false,
+    modal: true,
+    login: true,
 
     username: '',
     password: '',
@@ -167,11 +167,11 @@ class App extends Component {
   };
 
   //RENDER LOGIN info
-  renderLogin = (event) => {
-    this.setState({
-      login: !this.state.login,
-    });
-  };
+  // renderLogin = (event) => {
+  //   this.setState({
+  //     logInModal: !this.state.login,
+  //   });
+  // };
 
   //CALLBACK FOR UPDATE STATE FOR SIGNUP
   handleUserChange = (event) => {
@@ -266,7 +266,7 @@ class App extends Component {
           password={this.state.password}
           displayModal={this.state.modal}
           closeModal={this.selectModal}
-          renderLogin={this.renderLogin}
+          selectLogInModal={this.selectLogInModal}
           login={this.state.login}
         />
 

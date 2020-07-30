@@ -37,14 +37,15 @@ const SignUpModal = (props) => {
   // Destructuring keys from our local state to use in the form
   const { username, password } = signupForm;
 
-  // console.log(this.props)
-
   return (
-    //SIGNUPMODAL
     <div className="container">
       <div className="modal" onClick={closeModal} style={divStyle}>
         <div className="modal-content" onClick={(e) => e.stopPropagation()}>
           <form onSubmit={(e) => handleSubmit(e)} action="action_page.php">
+            <span className="close" onClick={closeModal}>
+              {' '}
+              X{' '}
+            </span>
             <div className="container">
               <h1>Join the global foodie fam!</h1>
               <p>Please fill in this form to create an account.</p>
@@ -91,7 +92,7 @@ const SignUpModal = (props) => {
                 <br></br>
                 <button
                   type="submit"
-                  onClick={props.renderLogin}
+                  onClick={props.selectLogInModal}
                   className="signupbtn"
                 >
                   Explore!
@@ -99,11 +100,6 @@ const SignUpModal = (props) => {
               </div>
             </div>
           </form>
-
-          <span className="close" onClick={closeModal}>
-            {' '}
-            X{' '}
-          </span>
         </div>
       </div>
     </div>
