@@ -76,7 +76,6 @@ const loginUserToDB = (userCredentials) => (dispatch) => {
         console.log('fetch hit');
         MySwal.fire({
           title: 'Login successful - Happy Exploring!',
-          // footer: 'Youre in, Happy Exploring!',
         });
         dispatch(setUserAction(data.user));
         localStorage.setItem('token', data.token);

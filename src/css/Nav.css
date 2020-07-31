@@ -1,45 +1,44 @@
 #nav {
-    position:absolute;
-    height: 336px;
-	width: 790px;
-	background-repeat: no-repeat;
-	background-position: 10px 10px;
-	/* [COLOR="Red"]position: relative;[/COLOR] */
-	z-index: 3
-}   
-
-
-.logo{
-	display: flex;
-    align-items: center;
-    text-align: center;
+  position: absolute;
+  height: 336px;
+  width: 790px;
+  background-repeat: no-repeat;
+  background-position: 10px 10px;
+  /* [COLOR="Red"]position: relative;[/COLOR] */
+  z-index: 3;
 }
 
-.ui.secondary.menu{
-display: flex;
-justify-content: space-evenly;
+.logo {
+  display: flex;
+  align-items: center;
+  text-align: center;
 }
 
-#search.ui.category.search{
-	position: absolute;
-                /* /* top: 355px; */
-				left: 400px;
-				height: 10px;
-				/* width: px; */
-                z-index: 3;
+.ui.secondary.menu {
+  display: flex;
+  justify-content: space-evenly;
 }
 
-#searchResults{
-	z-index: 3;
-	display: block;
+#search.ui.category.search {
+  position: absolute;
+  /* /* top: 355px; */
+  left: 400px;
+  height: 10px;
+  /* width: px; */
+  z-index: 3;
 }
 
-input[type=text]:focus {
-	width: 400px;
-	height: .1px;
-	display: block;
-} 
-  
+#searchResults {
+  z-index: 3;
+  display: block;
+}
+
+input[type='text']:focus {
+  width: 400px;
+  height: 0.1px;
+  display: block;
+}
+
 /* .ui.search>.results:focus{
 	z-index: 3;
 	display: block;
@@ -49,50 +48,44 @@ input[type=text]:focus {
 	display: block;
 } */
 
-#cover{
-	z-index: 3;
+#cover {
+  z-index: 3;
 }
 
-
-
-*
-{
-    outline: none;
+* {
+  outline: none;
 }
 
-html, body
-{
-    height: 50%;
-    min-height: 100%;
+html,
+body {
+  height: 50%;
+  min-height: 100%;
 }
 
-body
-{
-	height: 50%;
-    margin: 0;
-    background-color: #ffd8d8;
+body {
+  height: 50%;
+  margin: 0;
+  background-color: #fff;
 }
 
-.tb
-{
-    display: table;
-    width: 100%;
+.tb {
+  display: table;
+  width: 100%;
 }
 
-.td
-{
-    display: table-cell;
-    vertical-align: middle;
+.td {
+  display: table-cell;
+  vertical-align: middle;
 }
 
-input, button
-{
-    color: #fff;
-    font-family: Nunito;
-    padding: 0;
-    margin: 0;
-    border: 0;
-    background-color: transparent;
+input,
+button {
+  color: #fff;
+  font-family: Nunito;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background-color: transparent;
 }
 
 #cover
@@ -110,17 +103,15 @@ input, button
     transform: scale(0.6); */
 /* } */
 
-form
-{
-    height: px;
+form {
+  height: px;
 }
 
-input[type="text"]
-{
-    width: 100%;
-    height: 96px;
-    font-size: 60px;
-    line-height: 1;
+input[type='text'] {
+  width: 100%;
+  height: 96px;
+  font-size: 60px;
+  line-height: 1;
 }
 
 /* input[type="text"]::placeholder
@@ -128,97 +119,89 @@ input[type="text"]
     color: #e16868;
 } */
 
-#s-cover
-{
-    width: 1px;
-    padding-left: 2px;
+#s-cover {
+  width: 1px;
+  padding-left: 2px;
 }
 
-button
-{
-    position: relative;
-    display: block;
-    width: 84px;
-    height: 96px;
-    cursor: pointer;
+button {
+  position: relative;
+  display: block;
+  width: 84px;
+  height: 96px;
+  cursor: pointer;
 }
 
-#s-circle
-{
-    position: relative;
-    top: -8px;
-    left: 0;
-    width: 43px;
-    height: 43px;
-    margin-top: 0;
-    border-width: 15px;
-    border: 15px solid #fff;
-    background-color: transparent;
-    border-radius: 50%;
-    transition: 0.5s ease all;
+#s-circle {
+  position: relative;
+  top: -8px;
+  left: 0;
+  width: 43px;
+  height: 43px;
+  margin-top: 0;
+  border-width: 15px;
+  border: 15px solid #fff;
+  background-color: transparent;
+  border-radius: 50%;
+  transition: 0.5s ease all;
 }
 
-button span
-{
-    position: absolute;
-    top: 68px;
-    left: 43px;
-    display: block;
-    width: 45px;
-    height: 15px;
-    background-color: transparent;
-    border-radius: 10px;
-    transform: rotateZ(52deg);
-    transition: 0.5s ease all;
+button span {
+  position: absolute;
+  top: 68px;
+  left: 43px;
+  display: block;
+  width: 45px;
+  height: 15px;
+  background-color: transparent;
+  border-radius: 10px;
+  transform: rotateZ(52deg);
+  transition: 0.5s ease all;
 }
 
-button span:before, button span:after
-{
-    content: '';
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 45px;
-    height: 15px;
-    background-color: #fff;
-    border-radius: 10px;
-    transform: rotateZ(0);
-    transition: 0.5s ease all;
+button span:before,
+button span:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 45px;
+  height: 15px;
+  background-color: #fff;
+  border-radius: 10px;
+  transform: rotateZ(0);
+  transition: 0.5s ease all;
 }
 
-#s-cover:hover #s-circle
-{
-    top: -1px;
-    width: 67px;
-    height: 15px;
-    border-width: 0;
-    background-color: #fff;
-    border-radius: 20px;
+#s-cover:hover #s-circle {
+  top: -1px;
+  width: 67px;
+  height: 15px;
+  border-width: 0;
+  background-color: #fff;
+  border-radius: 20px;
 }
 
-#s-cover:hover span
-{
-    top: 50%;
-    left: 56px;
-    width: 25px;
-    margin-top: -9px;
-    transform: rotateZ(0);
+#s-cover:hover span {
+  top: 50%;
+  left: 56px;
+  width: 25px;
+  margin-top: -9px;
+  transform: rotateZ(0);
 }
 
-#s-cover:hover button span:before
-{
-    bottom: 11px;
-    transform: rotateZ(52deg);
+#s-cover:hover button span:before {
+  bottom: 11px;
+  transform: rotateZ(52deg);
 }
 
-#s-cover:hover button span:after
-{
-    bottom: -11px;
-    transform: rotateZ(-52deg);
+#s-cover:hover button span:after {
+  bottom: -11px;
+  transform: rotateZ(-52deg);
 }
-#s-cover:hover button span:before, #s-cover:hover button span:after
-{
-    right: -6px;
-    width: 40px;
-    background-color: #fff;
+#s-cover:hover button span:before,
+#s-cover:hover button span:after {
+  right: -6px;
+  width: 40px;
+  background-color: #fff;
 }

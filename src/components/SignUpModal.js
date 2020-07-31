@@ -47,8 +47,8 @@ const SignUpModal = (props) => {
               X{' '}
             </span>
             <div className="container">
-              <h1>Join the global foodie fam!</h1>
-              <p>Please fill in this form to create an account.</p>
+              <h1>Discover and share dishes from around the world! </h1>
+              <p>Join our global foodie fam below.</p>
               <hr />
 
               <label htmlFor="username">
